@@ -1,0 +1,23 @@
+*{margin: 0;padding: 0;}
+a{text-decoration: none; color: #000;}
+li{list-style: none;}
+header{
+    width: 100%;
+    padding: 20px;
+    border: 1px solid red;
+}
+nav{
+    width: 1200px;
+    margin: 0 auto;
+    background-color: beige;
+}
+nav li{
+    float: left;
+    margin-right: 20px;
+}
+nav::after{
+    display: block;
+    content: "";
+    clear: both;
+}
+/* float된 요소의 부모태그에 ::after */
