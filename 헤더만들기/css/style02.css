@@ -1,0 +1,41 @@
+*{margin: 0; padding: 0;}
+a{text-decoration: none; color: #8d8d8d;}
+li{list-style: none;}
+body{
+    background-color: #f3f6f8;
+}
+header{
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+}
+ul{
+    width: 1170px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: end;
+}
+ul li{
+    padding: 12px 12px;
+    position: relative;
+    
+}
+ul li:nth-of-type(3){
+    padding-right: 0;
+}
+ul li:nth-of-type(3)::after{
+    display: none;
+}
+ul li::after{
+    position: absolute;
+    transform:translateY(-50%);
+    /* 기준점 센터로 변경 */
+    right:0;
+    top:50%;
+    content: "";
+    width: 1px;
+    height: 10px;
+    background-color: #cecece;
+    display: inline-block;
+    
+}
