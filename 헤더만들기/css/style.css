@@ -1,0 +1,33 @@
+*{margin: 0; padding: 0;}
+a{text-decoration: none; color: #fff;}
+li{list-style: none;}
+nav{
+    background-color: navy;
+    padding:8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav_logo{
+    font-size: 24px;
+    
+}
+.nav_logo i{
+    color:orange
+}
+.nav_menu{
+    display: flex;
+}
+.nav_menu li{
+    padding: 8px 12px;
+}
+.nav_menu{
+    padding: 8px 12px;
+
+}
+.nav_sns{
+    display: flex;
+}
+.nav_sns li{
+    padding: 8px 12px;
+}
