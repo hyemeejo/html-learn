@@ -1,0 +1,159 @@
+*{margin: 0; padding: 0;box-sizing: border-box;}
+a{text-decoration: none; color: black;}
+li{list-style: none;}
+body{
+    background-color:#f3f6f8 ;
+    font-family: "Noto Sans KR", sans-serif;
+    
+}
+header{
+    width: 100%;
+    padding: 16px 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .inner{
+    width: 1170px;
+}
+/* lnb 시작 */
+.lnb{
+    display: flex;
+    justify-content: end;
+    padding-bottom: 20px;
+}
+.lnb li{
+    padding: 0 12px;
+    position: relative;
+}
+.lnb li:nth-of-type(3){
+    padding-right: 0;
+}
+lnb li:nth-of-type(3)::after{
+    display: none;
+}
+.lnb li::after{
+    content: "";
+    width: 1px;
+    height: 10px;
+    background-color: #cecece;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+
+}
+.lnb li a{
+    font-size: 14px;
+    color:#8d8d8d;
+}
+/* lnb 끝 */
+
+/* nav 시작 */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav_menu{
+    display: flex;
+    align-items: center;
+}
+.nav_menu li{
+    padding: 0 10px;
+}
+.nav_menu li a{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px 10px;
+}
+.right_info{
+    display: flex;
+    align-items: center;
+}
+form{
+    position: relative;
+}
+form .srch_btn{
+    position: absolute;
+    top:50%;
+    right: 6px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background-color: transparent;
+}
+form .srch_btn i{
+    font-size: 20px;
+
+}
+form input{
+    width: 214px;
+    height: 44px;
+    border-radius: 44px;
+    padding: 0 45px 2px 20px;
+    font-size: 18px;
+}
+.right_info button{
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+.right_info button i{
+    font-size: 20px;
+}
+.right_info_btn{
+    margin-left: 20px;
+}
+/* nab 끝 */
+/* header 끝 */
+
+/* mainvisual 시작 */
+.mainVisual{
+    width: 1170px;
+    height: 377px;
+    background: url(../img/메인이미지.png)no-repeat right center;
+
+    background-color: #fff;
+    margin:20px auto;
+    border-radius: 28px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+    position: relative;
+}
+.slidtext{
+    border: 1px solid red;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    left: 81px;
+
+}
+.slidtext span{
+    display: block;
+}
+.slidtext span:nth-of-type(1){
+    font-size: 30px;
+}
+.slidtext span:nth-of-type(2){
+    font-size: 54px;
+    font-weight: 500;
+}
+.slidtext span:nth-of-type(3){
+    font-size: 22px;
+    color: #5f626a;
+}
+.slidtext button{
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    color:#006ddf;
+    font-size: 17px;
+}
+/* mainvisual 끝 */
