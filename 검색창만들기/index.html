@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .search_box{
+            width: 300px;
+            position: relative;
+           
+        }
+
+        .search_txt{
+            border: 0;
+            padding: 10px 12px;
+            font-size: 14px;
+            width: 100%;
+            box-sizing: border-box;
+            outline: none;
+            border: 1px solid #8d8d8d;
+            border-radius: 100px;
+        }
+
+        .search_txt:focus{
+            border: 1px solid blue;
+            background-color: lightblue;
+            box-shadow: inset 5px 5px 10px rgba(0,0,0,0.3);
+        }
+        button{
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .radiobox input{
+            accent-color: red;}
+
+            .check_box{
+                appearance: none;
+                /* checkbox가 가지고 있는 성질이 다 사라짐 */
+                border: 1px solid red;
+                padding: 2px;
+                border-radius: 8px;
+                /* accent-color:red; */
+                /* accent-color는 appearance가 들어가면서 초기화됨 */
+                width: 50px;
+                height: 50px;
+            }
+            .check_box:checked{
+                background-color: red;
+                background-clip: content-box;
+            }
+    </style>
+</head>
+<body>
+    <form class="search_box" action="">
+        <input class="search_txt" type="text" placeholder="검색어 입력">
+        <button>검색</button>
+    </form>
+
+    <input class="check_box" type="checkbox">
+    <!-- 다중선택 중목선택가능 -->
+     <input type="radio">
+     <!-- 한개만선택가능 -->
+    <form class="radiobox">
+        <p>당신의 나이대를 골라주세요.</p>
+        <input type="radio" name="ages" id="">10대<br>
+        <input type="radio" name="ages" id="">20대<br>
+        <input type="radio" name="ages" id="">30대<br>
+        <input type="radio" name="ages" id="">40대<br>
+        <input type="submit">
+        <!-- 제출버튼누르면 초기회됨 -->
+    </form>
+
+     <form oninput="x.value=parseInt(a.value)" action="">
+         <p>당신의 나이대를 골라주세요.</p>
+         <input type="range" id="a" name="ages" min="10" max="60" step="10">
+         <output name="x" for="a"></output>
+    </form>
+    
+    
+</body>
+</html>
