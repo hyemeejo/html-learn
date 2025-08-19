@@ -1,0 +1,47 @@
+*{margin: 0; padding: 0;}
+a{text-decoration: none;color: black;}
+li{list-style: none;}
+header{
+    background:linear-gradient(rgba(0,0,0,0.7)0%,rgba(0,0,0,0)100%);
+    display: flex;
+    justify-content: center;
+}
+/* 배경에 그라데이션넣기 */
+.nav{
+    width: 1200px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+}
+.nev_menu{
+    margin: 0 20px;
+    padding: 20px 0;
+    border: 1px solid blue;
+    position: relative;
+}
+.nev_menu:hover .sub_menu{
+    opacity: 1;
+    visibility: visible;
+}
+.main_menu{
+    text-align: center;
+    display: block;
+}
+.sub_menu{
+    background-color: #000;
+    border-radius: 12px;
+    position: absolute;
+    top:100%;
+    left:50%;
+    transform: translateX(-50%);
+    /* display: none; */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+.sub_menu li{
+    padding: 20px;
+}
+.sub_menu li a{
+    color: #fff;
+}

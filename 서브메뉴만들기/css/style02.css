@@ -1,0 +1,45 @@
+*{margin: 0; padding: 0;}
+a{text-decoration: none; color: black;}
+li{list-style: none;}
+header{
+    background: linear-gradient(rgba(0,0,0,0.7)0%,rgba(0,0,0,0)100%);
+    display: flex;
+    justify-content: center;
+}
+.nav{
+    width: 1200px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+}
+.nav_menu{
+    border: 1px solid blue;
+    padding: 20px 0;
+    margin: 0 20px;
+    position: relative;
+}
+.nav_menu:hover .sub_menu{
+    opacity: 1;
+    visibility: visible;
+}
+.main_menu{
+    border: 1px solid green;
+    text-align: center;
+}
+.sub_menu{
+    background-color: black;
+   border-radius: 12px;
+   position: absolute;
+   top: 100%;
+   left: 50%;
+   transform: translateX(-50%);
+   opacity: 0;
+   visibility: hidden;
+   transition: all 0.3s;
+}
+.sub_menu li {
+    padding: 30px;
+}
+.sub_menu li a{
+    color: #fff;
+}
