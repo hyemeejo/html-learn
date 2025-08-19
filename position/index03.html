@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        a{text-decoration: none; color: #000;}
+        li{list-style: none;}
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        ul{
+            border: 1px solid red;
+            width: 500px;
+            height: 500px;
+            position: relative;
+        }
+        li{
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            display: flex;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+        }
+        li:nth-of-type(5){
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        li:nth-of-type(4){
+            right:0;
+            bottom: 0;
+        }
+        li:nth-of-type(3){
+            bottom: 0;
+        }
+        li:nth-of-type(2){
+            right: 0;
+        }
+        li:nth-of-type(6){
+            z-index: 999;
+            background-color: lightcoral;
+            height: 100%;
+            left:-100px;
+        }
+        li:nth-of-type(7){
+            z-index: 1000;
+            background-color: lightpink;
+            height: 100%;
+            left: 500px
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>box1</li>
+        <li>box2</li>
+        <li>box3</li>
+        <li>box4</li>
+        <li>box5</li>
+        <li>box6</li>
+        <li>box7</li>
+    </ul>
+    
+</body>
+</html>
