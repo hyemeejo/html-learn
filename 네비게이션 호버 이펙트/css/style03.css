@@ -1,0 +1,42 @@
+*{margin: 0; padding: 0;}
+a{text-decoration: none; color: black;}
+li{list-style: none;}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn a{
+    display: block;
+    width: 300px;
+    height: 40px;
+    border: 1px solid red;
+    position: relative;
+    overflow: hidden;
+}
+.btn a::before,
+.btn a::after{
+    content: attr(data-text);
+    position: absolute;
+    color: #fff;
+    width: inherit;
+    text-align: center;
+    line-height: 2.5em;
+    height: inherit;
+    transition:all 0.3s ease;
+}
+.btn a::before{
+    background-color: crimson;
+    top:0;
+}
+.btn a::after{
+    background-color: royalblue;
+    top:100%;
+}
+.btn a:hover::before{
+    top:-100%;
+}
+.btn a:hover::after{
+    top:0;
+}

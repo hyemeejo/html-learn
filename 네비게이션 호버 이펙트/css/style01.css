@@ -1,0 +1,103 @@
+*{margin: 0; padding: 0;}
+a{text-decoration: none; color: black;}
+li{list-style: none;}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.btn1,
+.btn2,
+.btn3,
+.btn4,
+.btn5{
+    font-size: 40px;
+    display: block;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+}
+/* btn1 시작 */
+.btn1::before{
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: crimson;
+    display: block;
+    position: absolute;
+    bottom:0;
+    left:0;
+    transition: all 0.5s ease;
+    /* transition 호버가 노출되는 중간효과(0.5초동안 선이 노출됨) */
+}
+.btn1:hover::before{
+    width: 100%;
+}
+/* btn2 시작 */
+.btn2::before{
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: crimson;
+    display: block;
+    position: absolute;
+    bottom:0;
+    right:0;
+    transition: all 0.5s ease;
+    /* transition 호버가 노출되는 중간효과(0.5초동안 선이 노출됨) */
+}
+.btn2:hover::before{
+    width: 100%;
+}
+/* btn3 시작 */
+.btn3::before{
+    content: "";
+    height: 5px;
+    width: 5px;
+    background-color: crimson;
+    display: block;
+    position: absolute;
+    bottom:0;
+    left:0;
+    transition: all 0.5s ease;
+    /* transition 호버가 노출되는 중간효과(0.5초동안 선이 노출됨) */
+}
+.btn3:hover::before{
+    left: 100%;
+}
+/* btn4 시작 */
+.btn4::before{
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: crimson;
+    display: block;
+    position: absolute;
+    bottom:0;
+    left:50%;
+    transition: all 0.5s ease;
+    transform: translateX(-50%);
+    /* transition 호버가 노출되는 중간효과(0.5초동안 선이 노출됨) */
+}
+.btn4:hover::before{
+    width: 100%;
+}
+/* btn5 시작 */
+.btn5::before{
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: crimson;
+    display: block;
+    position: absolute;
+    bottom:0;
+    left:50%;
+    transition: all 0.5s ease;
+    transform: translateX(-50%);
+    /* transition 호버가 노출되는 중간효과(0.5초동안 선이 노출됨) */
+}
+.btn5:hover::before{
+    width: 0;
+}
