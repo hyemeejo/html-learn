@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        li{list-style: none;}
+        
+        body{
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        ul{
+            width: 1200px;
+            border: 1px solid #000;
+            display: flex;
+            justify-content: space-between;
+        }
+        li{
+            background-color: #fff;
+            width: calc(25% - 10px);
+            border: 1px solid red;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        @media all and (max-width:768px){
+            ul{
+                width: 100%;
+                flex-wrap: wrap;
+            }
+            li{
+                width: calc(50% - 10px);
+            }
+
+        }
+
+        @media(max-width:480px){
+            ul{
+                width: 100%;
+                flex-wrap: wrap;
+            }
+            li{
+                width: calc(100% - 10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>box1</li>
+        <li>box2</li>
+        <li>box3</li>
+        <li>box4</li>
+    </ul>
+</body>
+</html>
