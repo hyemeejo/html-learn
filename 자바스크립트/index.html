@@ -24,15 +24,20 @@
         }
         .sub{
             background-color: lightblue;
+            position: relative;
             display: none;
         }
         .sub>li{
             padding: 8px 12px;
             cursor: pointer;
+            position: absolute;
         }
 
-        .sub>li:hover{
+        .main>ul:hover>li{
             background-color: lightblue;
+        }
+        .sub.show{
+            display: block;
         }
 
     </style>
@@ -58,11 +63,13 @@
                 const mainBtn = document.querySelector('.main');
                 const alength = document.querySelector('.sub>li');
                 const subBtn = document.querySelector('.sub');
-                console.log(mainBtn);
-                console.log(alength);
+                console.log('mainBtn');
+                console.log('alength');
+                console.log('sub');
 
-                mainBtn.addeventListener('mouseover',show);
-                mainBtn.addeventListener('mouseout',hide)
+                mainBtn.addEventListener('click',show);
+                mainBtn.addEventListener('mouseout',hide);
+
 
                 function show(){
                     subBtn.style.display = 'block';
