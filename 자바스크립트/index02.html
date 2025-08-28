@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 0px;
+            background-color: royalblue;
+            transition: all 0.5s ease-in-out;
+       
+        }
+
+        div.active{
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <button>커져라</button>
+    
+    <div></div>
+
+    <script>
+        const btn = document.querySelector('button'),
+            blueBox =document.querySelector('div');
+        btn.addEventListener('click',maxWidth);
+        
+        function maxWidth(){
+            blueBox.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

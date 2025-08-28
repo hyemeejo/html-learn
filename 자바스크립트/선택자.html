@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>태그선택자</p>
+    <div></div>
+    <div class="box"></div> 
+    
+    <script>
+        const h1 = document.querySelector('p');
+        const divBox = document.getElementsByClassName('box');
+        console.log(h1);
+
+        h1.style.color = 'blue';
+        h1.style.fontsize = '30px';
+    </script>
+</body>
+</html>

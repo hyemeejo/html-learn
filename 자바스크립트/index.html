@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        a{text-decoration: none; color:black}
+        li{list-style: none;}
+
+        .wrap{
+            border: 1px solid red;
+            width: max-content;
+        }
+        .main {
+            
+            text-align: center;
+        }
+        .main>a{
+            padding: 20px 40px;
+            background-color: lightblue;
+        }
+        .sub{
+            background-color: lightblue;
+            display: none;
+        }
+        .sub>li{
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .sub>li:hover{
+            background-color: lightblue;
+        }
+
+    </style>
+</head>
+<body>
+   
+       
+            <ul class="wrap">
+                <li class="main">
+                    <a href="">메뉴1</a>
+                    <ul class="sub">
+                        <li>서브</li>
+                        <li>서브</li>
+                        <li>서브</li>
+                        <li>서브</li>
+                        <li>서브</li>
+                    </ul>  
+                </li>          
+                
+            </ul>
+
+            <script>
+                const mainBtn = document.querySelector('.main');
+                const alength = document.querySelector('.sub>li');
+                const subBtn = document.querySelector('.sub');
+                console.log(mainBtn);
+                console.log(alength);
+
+                mainBtn.addeventListener('mouseover',show);
+                mainBtn.addeventListener('mouseout',hide)
+
+                function show(){
+                    subBtn.style.display = 'block';
+                }
+                function hide(){
+                    subBtn.style.display = 'none';
+                }
+
+            </script>
+        
+   
+    
+</body>
+</html>
