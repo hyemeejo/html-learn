@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        a{text-decoration: none; color: black;}
+        li{list-style: none;}
+
+        header{
+            background-color: transparent;
+            /* transparent 투명 */
+            position: fixed;
+            top:0;
+            width: 100%;
+            border: 1px solid red;
+        }
+        section{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            logo
+        </div>
+        <nav>
+            <ul class="nav_menu">
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#skill">skill</a></li>
+                <li><a href="#work">work</a></li>
+                <li><a href="#contect">contect</a></li>
+                <!-- #은 id를 뜻함. 작성할때 #아이디이름 -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">1</section>
+        <section id="about">2</section>
+        <section id="skill">3</section>
+        <section id="work">4</section>
+        <section id="contect">5</section>
+    </main>
+    
+</body>
+</html>
