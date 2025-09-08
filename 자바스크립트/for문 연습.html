@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        li{list-style: none;}
+        a{text-decoration: none; color: black;}
+
+        .nav{
+            border: 1px solid black;
+            width: max-content;
+        }
+        .menus>a{
+            background-color: royalblue;
+            color: #fff;
+            padding: 12px 24px;
+            display: block;
+
+        }
+        .submenu{
+            overflow: hidden;
+            transition: all 0.3s ease-in;
+        }
+        .submenu li{
+            padding: 12px 24px;
+            text-align: center;
+        }
+        .submenu>li:hover{
+            background-color: royalblue;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li class="menus">
+            <a href="">메뉴</a>
+            <ul class="submenu">
+                <li><a href="#">서브</a></li>
+                <li><a href="#">서브</a></li>
+            </ul>
+        </li>
+
+        <li class="menus">
+            <a href="">메뉴</a>
+            <ul class="submenu">
+                <li><a href="#">서브</a></li>
+                <li><a href="#">서브</a></li>
+                <li><a href="#">서브</a></li>
+                <li><a href="#">서브</a></li>
+            </ul>
+        </li>
+
+        <li class="menus">
+            <a href="">메뉴</a>
+            <ul class="submenu">
+                <li><a href="#">서브</a></li>
+                <li><a href="#">서브</a></li>
+                <li><a href="#">서브</a></li>
+                <li><a href="#">서브</a></li>
+                <li><a href="#">서브</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        const mainBtn = document.querySelectorAll('menus>a');
+        const subBtn = document.querySelectorAll('submenu');
+        console.log(mainBtn);
+        console.log(subBtn);
+
+        for(let i=0; i<mainBtn.length; i++){
+            const subBtnHeignt = subBtn[i].clientHeight;
+            subBtn[i].style.height = '0px';
+        }
+    </script>
+    
+</body>
+</html>

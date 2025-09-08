@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko"
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        a{text-decoration: none; color: black;}
+
+        .nav{
+            border: 1px solid black;
+            width: max-content;
+        }
+
+        .menus>a{
+            background-color: royalblue;
+            color: #fff;
+            padding: 12px 24px;
+            display: block;
+        }
+        .submenu{
+            height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease-in;
+            }
+        .submenu>li{
+                padding: 12px 24px;
+                text-align: center;
+                cursor: pointer;
+        }
+        .submenu>li:hover{
+            background-color: royalblue;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li class="menus">
+            <a href="#">메뉴</a>
+            <ul class="submenu">
+                <li><a href="">서브</a></li>
+                <li><a href="">서브</a></li>
+            </ul>
+        </li>
+
+        <li class="menus">
+            <a href="#">메뉴</a>
+            <ul class="submenu">
+                <li><a href="">서브</a></li>
+                <li><a href="">서브</a></li>
+                <li><a href="">서브</a></li>
+                <li><a href="">서브</a></li>
+            </ul>
+        </li>
+
+        <li class="menus">
+            <a href="#">메뉴</a>
+            <ul class="submenu">
+                <li><a href="">서브</a></li>
+                <li><a href="">서브</a></li>
+                <li><a href="">서브</a></li>
+                <li><a href="">서브</a></li>
+                <li><a href="">서브</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        const mainBtn = document.querySelectorAll('.menus>a');
+        const subBtn = document.querySelectorAll('.submenu');
+
+        //초기상태: 모두 접기 = height값이 0px
+
+        for(let i =0; i<subBtn.length; i++){
+            subBtn[i].style.height = '0px'
+        }
+
+        for(let i =0; i<subBtn.length; i++){
+            mainBtn[i].addEventListener('click',()=>{
+                const currentSub = subBtn[i];
+                const isOpen = currentSub.style.height !== '0px';
+                // !==은 ~이 아니다(ex. !== 0px --> 0px이 아니다)
+
+                //모든 메뉴 닫기
+                for(let j=0; j<subBtn.length; j++){
+                    subBtn[j].style.height = '0px';
+                    // 먼저 닫는 상태부터시작
+                } 
+                //현재 메뉴가 닫혀 있었으면 닫기
+                if(!isOpen) {
+                    currentSub.style.height = currentSub.scrollHeight + 'px';
+                    // 만약 오픈되어있으면 currentSub가 높이를 갖는다
+                }           
+            });
+        }
+        // console.log(mainBtn);
+        // console.log(subBtn);
+
+        // for(let i=0; i<mainBtn.length; i++){
+        //     const subBtnHeignt = subBtn[i].clientHeight;
+            // clientHeight는 컨텐츠만큼 높이를 계산해줌 length(길이)는 메뉴의 수가 늘게되면 자동 반영됨.
+            // subBtn[i].style.height = '0px';
+            // 닫혀있을때 subBtn의 높이를 0으로 만들어줌
+            // console.log(subBtnHeignt);
+            // mainBtn[i].addEventListener('click',()=>{
+            //      console.log(i)
+                //  subBtn[i].style.height = "192px"
+                // subBtn[i].style.height = subBtnHeignt+'px';
+                // 0으로 높이를 변경했다가 높이를 다시 줌(+px)
+        //     });
+        // }       
+        
+    </script>
+</body>
+</html>

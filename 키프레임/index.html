@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        a{text-decoration: none; color: #fff;}
+        li{list-style: none;}
+        button{
+            padding: 20px;
+        }
+        .box{
+            background-color: black;
+            width: max-content;
+            color: #fff;
+            padding: 20px;
+            position: absolute;
+            left: 0;
+            top: 50%;
+
+            /* animation-name: ani;
+            /* 적용할 애니메이션효과의 이름 */
+            /* animation-duration: 3s; */
+            /* 몇초동안 움직임이 지속되는지 */
+            /* animation-delay: 1s; */
+            /* 몇초뒤에 움직임이 시작되는지 */
+            /* animation-iteration-count: infinite; */
+            /* 무한으로 움직임 */
+        } 
+        .box.active{
+            animation: ani 3s ease-in infinite;
+        }
+
+        @keyframes rotate {
+            0%{
+                transform: rotate(0deg);
+                
+            }
+            100%{
+                transform: rotate(360deg);
+
+            }
+        }
+
+        @keyframes ani{
+            0%{
+                left: 0%;
+            }
+            50%{
+                left: 50%;
+            }
+            100%{
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="ani_btn">Go</button>
+    <div class="box">box</div>
+
+    <script>
+        const anibtn = document.querySelector('.ani_btn');
+        const box = document.querySelector('.box');
+
+        anibtn.addEventListener('click',()=>{
+            box.classList.toggle('active');
+        });
+// click,을 누르면 (함수)가 {방식}으로 움직인다
+        function animation(){
+            box.classList.toggle('active');
+        }
+        // console.log(anibtn)
+        // console.log(box)
+        // anibtn이 잘 뜨는지 확인하는 것 잘못되었을경우 에러뜸 / 변수는()안에 .넣지않음
+        // 자바스크립트와 css 입력방식을 통일해야함. 자바에서 클래스명을 썼을 경우 css에서도 클래스명 입력해야함
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        li{list-style: none; cursor: pointer;}
+
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrap{
+            display: flex;
+            border: 1px solid black;
+        }
+        .wrap li{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="wrap">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+        <li>메뉴5</li>
+    </ul>
+
+    <script>
+        const menus = document.querySelectorAll('.wrap li')
+        console.log(menus);
+        for(let i=0; i<menus.length; i++){
+            
+            // menus[0].style.color = 'red'
+            menus[i].addEventListener('mouseover',()=>{
+                console.log(i);
+                menus[i].style.color = 'red'
+            });
+        }
+        // for(let i는 0이고 5보다 작고 점차증가한자) menus의 length보다 작다로 등록할경우 body의 메뉴갯수가 수정될경우 자동으로 반영됨.
+        // menu[순번]은 색상이 레드가 된다
+        // menu i를 마우스오버하면 console창에 뜬다
+    </script>
+    
+</body>
+</html>
