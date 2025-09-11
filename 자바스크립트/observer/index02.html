@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        a{text-decoration: none; color:#000}
+        html{
+            scroll-behavior: smooth;
+        }
+        nav{
+            width: 100%;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        nav>a{
+            display: block;
+            text-align: center;
+            padding: 18px 0;
+            flex: 1;
+        }
+
+        nav>a:hover{
+            background-color: royalblue;
+            color: #fff;
+        }
+        nav>a.active{
+            background-color: royalblue;
+            color: #fff;
+        }
+
+        section{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#works">works</a>
+        <a href="#contact">contact</a>
+    </nav>
+    <section id="home">home</section>
+    <section id="about">about</section>
+    <section id="works">works</section>
+    <section id="contact">contact</section>
+
+    <script>   
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav>a');
+
+        const observer = new IntersectionObserver(entries =>{
+            entries.forEach(entry =>{
+                console.log(entry);
+                if(entry.isIntersecting){
+                    navLinks.forEach(link=>{
+                        // 모든 링크에서 active 제거
+                        link.classList.remove('active');
+                        // 감지하고 있는 sectiond의 id 찾기
+                        const id = entry.target.getAttribute('id');
+                        // 해당 id 와 같은 href를 가진 nav>a에 active추가
+                        const activeLink = document.querySelector(`nav>a[href="#${id}"]`);
+                        if(activeLink) activeLink.classList.add('active');
+                    });
+                }else{
+
+                }
+            });
+        },{threshold:0.6});//60%이상 보여야 현재 섹션으로 인식
+
+        sections.forEach(section=>{
+            observer.observe(section);
+        });
+
+        
+    </script>
+</body>
+</html>
