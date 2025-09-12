@@ -51,6 +51,31 @@
         <section id="community">community</section>
         <section id="footer">footer</section>
     </main>
+
+    <script>
+        const options = {
+            threshold:1,
+            rootMargine:"0px 0px -100px 0px"
+
+        }
+        const Observer = new IntersectionObserver(callback, options);
+        const boxes = document.querySelectorAll('.main_img');
+        boxes.forEach(main_img=>{
+            Observer.observe(main_img);
+       });
+
+        function callback(entries){
+            entries.forEach(entry=>{
+                console.log(entry);
+                if(entry.isintersecting){
+                    entry.target.classList.add('active');
+                }else{
+                    entry.target.classList.remove('active');
+
+                };
+            });
+        };
+    </script>
 </body>
 
 </html>

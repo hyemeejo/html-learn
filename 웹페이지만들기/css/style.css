@@ -11,6 +11,11 @@ header{
     position: absolute;
     backdrop-filter: blur(46.6px);
     z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* width: 100%; */
 }
 .header_logo{
     display: flex;
@@ -71,6 +76,16 @@ header{
     justify-content: center;
     align-items: center;
     padding: 186px 0 55px 0;
+    
+}
+.main_img>img{
+    box-shadow: 5px 5px 20px rgba(0,0,0,1);
+    opacity: 1;
+    transition: all 0.5s;
+}
+.main_img>img.active{
+    transform: translateY(0px);
+    opacity: 1;
 }
 .main_logo{
     display: flex;
