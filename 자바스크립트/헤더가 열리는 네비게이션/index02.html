@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        body {
+            background-color: #eaeaea;
+
+        }
+
+        header {
+            height: 60px;
+            background: linear-gradient(to bottom, #000 0px, #000 60px, #fff 60px, #fff 500px);
+            /*메인 메뉴 높이*/
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        nav {
+            width: 800px;
+            margin: 0 auto;
+            border: 1px solid red;
+        }
+
+        /*메인 메뉴*/
+        nav .main_menu {
+            display: flex;
+        }
+
+        nav .main_menu>li {
+            flex: 1;
+            text-align: center;
+        }
+
+        nav .main_menu>li>a {
+            color: #fff;
+        }
+
+        nav a {
+            display: block;
+            padding: 18px;
+        }
+
+        nav a:hover {
+            background-color: royalblue;
+        }
+
+        /*서브메뉴*/
+        .sub_menu {}
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="main_menu">
+                <li>
+                    <a href="#">Menu 1</a>
+                    <ul class="sub_menu">
+                        <li><a href="#">Sub 1</a></li>
+                        <li><a href="#">Sub 2</a></li>
+                        <li><a href="#">Sub 3</a></li>
+                        <li><a href="#">Sub 4</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Menu 2</a>
+                    <ul class="sub_menu">
+                        <li><a href="#">Sub 1</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Menu 3</a>
+                    <ul class="sub_menu">
+                        <li><a href="#">Sub 1</a></li>
+                        <li><a href="#">Sub 2</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Menu 4</a>
+                    <ul class="sub_menu">
+                        <li><a href="#">Sub 1</a></li>
+                        <li><a href="#">Sub 2</a></li>
+                        <li><a href="#">Sub 3</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Menu 5</a>
+                    <ul class="sub_menu">
+                        <li><a href="#">Sub 1</a></li>
+                        <li><a href="#">Sub 2</a></li>
+                        <li><a href="#">Sub 3</a></li>
+                        <li><a href="#">Sub 4</a></li>
+                        <li><a href="#">Sub 5</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        const mainMenu = document.querySelector('.main_menu');
+        const allSubMenu = document.querySelectorAll('.sub_menu');
+        const header = document.querySelector('header');
+        const headerBaseHeight = 60;
+
+        //최대 서브메뉴 높이 계산
+        function getMaxsubmenuHeight() {
+            let maxHeight = 0;
+
+            allSubMenu.forEach(sub => {
+                const h = sub.scrollHeight;
+
+                if (h > maxHeight) {
+                    maxHeight = h;
+                    console.log(maxHeight);
+                }
+            });
+            return maxHeight;
+        }
+         //마우스 올리면 전체 서브메뉴 슬라이드 다운
+         mainMenu.addEventListener('mouseover',()=>{
+             const maxHeight = getMaxsubmenuHeight();
+             header.style.height = (headerBaseHeight + maxHeight) +'px';
+         });
+
+         //마우스 나가면 전체 서브메뉴 슬라이드 업
+         mainMenu.addEventListener('mouseleave',()=>{
+             const maxHeight = getMaxsubmenuHeight();
+             header.style.height = headerBaseHeight +'px';
+         });
+    </script>
+</body>
+
+</html>

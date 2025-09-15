@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="./css/style.css">
+   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+</head>
+<body>
+    <header>
+        <nav class="navi">
+            <div class="main">
+                <ul class="main_menu">
+                    <li class="home"><a href="#home"><img src="./img/Dessin d'enfant.png" alt=""></a>
+                   </li>
+                    <li class="brand">
+                        <a href="#brand">BRAND</a>
+                        <ul class="sub_menu">
+                             <li><a href="#">브랜드스토리</a></li>
+                             <li><a href="#">교육이념</a></li>
+                             <li><a href="#">CEO 스토리</a></li>
+                             <li><a href="#">연혁</a></li>
+                             <li><a href="#">찾아오시는길</a></li>
+                        </ul>  
+                    </li>
+                    <li class="program"><a href="#program">PROGRAM</a>
+                        <ul class="sub_menu">
+                             <li><a href="#">The power of drowing</a></li>
+                             <li><a href="#">데생드앙팡 프로그램</a></li>
+                             <li><a href="#">Art test book</a></li>
+                             <li><a href="#">MBTI별 미술코칭</a></li>
+                        </ul>  
+                        
+                        
+                    </li>
+                    <li class="center"><a href="#center">CENTER</a>
+                        <ul class="sub_menu">
+                             <li><a href="#">교육원 찾기</a></li>
+                        </ul>
+                    
+                    </li>
+                    <li class="gallery"><a href="#gallery">GALLERY</a>
+                        <ul class="sub_menu">
+                             <li><a href="#">(초)수상작 갤러리</a></li>
+                             <li><a href="#">(유)수상작 갤러리</a></li>
+                             <li><a href="#">세계아동미술대회 소개</a></li>
+                             <li><a href="#">대회결과</a></li>
+                             <li><a href="#">영상</a></li>
+                        </ul>
+                    
+                    </li>
+                    <li class="community"><a href="#community">COMMUNITY</a>
+                        <ul class="sub_menu">
+                             <li><a href="#">DE NEWS</a></li>
+                             <li><a href="#">DE NOTICE</a></li>
+                             <li><a href="#">우리원이야기</a></li>
+                        </ul>
+                    
+                    </li>
+                </ul>
+            </div>        
+            <div class="icon">
+                <ul>
+                    <li class="shop"><a href="#"><img src="./img/장바구니.png" alt=""></a></li> 
+                    <li class="lang"><a href="#">kor</a></li>
+                    <li class="login"><a href="#">login</a></li>
+                    <li class="bar"><a href="#"><img src="./img/햄버거바.png" alt=""></a></li>
+                </ul>
+            </div>
+        </nav>    
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="main_visual">
+                <div class="main_img">
+                    <img src="./img/메인이미지.png" alt="">
+            </div>
+            <div class="main_logo">
+                <img src="./img/Dessin d'enfant_메인.png" alt="">
+            </div>
+            <div class="main_txt">세계 120만명의 아이들과 함께합니다.</div>
+                </div>
+                
+        </section>
+        <section id="brand">brand</section>
+        <section id="program">program</section>
+        <section id="center">center</section>
+        <section id="gallery">gallery</section>
+        <section id="community">community</section>
+        <section id="footer">footer</section>
+    </main>
+
+    <script>
+       const options = {
+            threshold:0.1,
+            rootMargin:"0px 0px 0px 0px",
+        }
+        const Observer = new IntersectionObserver(callback,options);
+        const navi = document.querySelectorAll('.navi');
+        navi.forEach(navi =>{
+            Observer.observe(navi);
+        });
+
+        function callback(entries){
+            entries.forEach(entry=>{
+                console.log(entry);
+                if(entry.isIntersecting){
+                    entry.target.classList.add('active');
+                }else{
+                    entry.target.classList.remove('active');
+                }
+            });
+        };
+    </script>
+</body>
+
+</html>

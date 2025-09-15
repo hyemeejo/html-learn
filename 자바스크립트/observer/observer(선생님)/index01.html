@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            margin: 80px auto;
+            background-color: royalblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 30px;
+            opacity: 0;
+            transition: all 0.5s;
+        }
+
+        /* .box.active{
+            opacity: 1;
+            transform: translateY(0);
+        } */
+
+        .from-bottom {
+            transform: translateY(100px);
+        }
+        .from-bottom.active {
+             opacity: 1;
+            transform: translateY(0px);
+        }
+
+        .from-right {
+            transform: translateX(100px);
+        }
+        .from-right.active {
+             opacity: 1;
+            transform: translateX(0px);
+        }
+        .emty {
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="emty"></div>
+    <div class="box from-bottom">1</div>
+    <div class="box from-right">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+    <div class="box">10</div>
+
+    <script>
+        const options = {
+            threshold:0.6,
+            rootMargin:"0px 0px -100px 0px",
+        }
+        const Observer = new IntersectionObserver(callback,options);
+        const boxes = document.querySelectorAll('.box');
+        boxes.forEach(box =>{
+            Observer.observe(box);
+        });
+
+        function callback(entries){
+            entries.forEach(entry=>{
+                console.log(entry);
+                if(entry.isIntersecting){
+                    entry.target.classList.add('active');
+                }else{
+                    entry.target.classList.remove('active');
+                }
+            });
+        };
+    </script>
+</body>
+</html>
