@@ -12,10 +12,9 @@ header{
     backdrop-filter: blur(46.6px);
     z-index: 999;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    /* width: 100%; */
+    top: -78px;
+    width: 100%;
+    transition: top 0.5s;
 }
 .header_logo{
     display: flex;

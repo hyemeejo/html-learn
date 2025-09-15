@@ -53,28 +53,14 @@
     </main>
 
     <script>
-        const options = {
-            threshold:1,
-            rootMargine:"0px 0px -100px 0px"
-
+        window.onscroll = scrollF();
+        function scrollF(){
+            if(document.body.scrolltop>78 documentElement.scrolltop>78){
+                document.getElementById('header').sytle.top = '0';
+            }else{
+                document.getElementById('')
+            }
         }
-        const Observer = new IntersectionObserver(callback, options);
-        const boxes = document.querySelectorAll('.main_img');
-        boxes.forEach(main_img=>{
-            Observer.observe(main_img);
-       });
-
-        function callback(entries){
-            entries.forEach(entry=>{
-                console.log(entry);
-                if(entry.isintersecting){
-                    entry.target.classList.add('active');
-                }else{
-                    entry.target.classList.remove('active');
-
-                };
-            });
-        };
     </script>
 </body>
 
