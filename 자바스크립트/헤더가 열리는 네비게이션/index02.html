@@ -140,7 +140,7 @@
             return maxHeight;
         }
          //마우스 올리면 전체 서브메뉴 슬라이드 다운
-         mainMenu.addEventListener('mouseover',()=>{
+         mainMenu.addEventListener('mouseover',()=>{    
              const maxHeight = getMaxsubmenuHeight();
              header.style.height = (headerBaseHeight + maxHeight) +'px';
          });

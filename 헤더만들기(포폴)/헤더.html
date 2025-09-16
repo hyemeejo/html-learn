@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 헤더 외부스타일 적용 -->
+    <link rel="stylesheet" href="./css/헤더 style.css">
+    <!--프리텐다드폰트 적용-->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+</head>
+
+<body>
+    <header>
+        <div class="nav_toggle_btn">
+            <a href="#"><img src="./img/햄버거바.png" alt=""></a>
+        </div>
+        <nav class="nav_main">
+            <div class="nav_logo">
+                <a href="#">
+                    <img src="./img/Dessin d'enfant.png" alt="">
+                </a>
+            </div>
+            <ul class="nav_menu">
+                <li>
+                    <a href="#">BRAND</a>
+                    <ul class="nav_sub">
+                        <li><a href="#">브랜드스토리</a></li>
+                        <li><a href="#">교육이념</a></li>
+                        <li><a href="#">CEO 스토리</a></li>
+                        <li><a href="#">연혁</a></li>
+                        <li><a href="#">찾아오시는길</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">PROGRAM</a>
+                    <ul class="nav_sub">
+                        <li><a href="#">The power of drowing</a></li>
+                        <li><a href="#">데생드앙팡 프로그램</a></li>
+                        <li><a href="#"> Art test book</a></li>
+                        <li><a href="#">MBTI별 미술코칭</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">CENTER</a>
+                    <ul class="nav_sub">
+                        <li><a href="#">교육원 찾기</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">GALLERY</a>
+                    <ul class="nav_sub">
+                        <li><a href="#">(초)수상작 갤러리</a></li>
+                        <li><a href="#">(유)수상작 갤러리</a></li>
+                        <li><a href="#">세계아동미술대회 소개</a></li>
+                        <li><a href="#">대회결과</a></li>
+                        <li><a href="#">영상 </a></li>
+                    </ul>
+                </li>
+                <li><a href="#">COMMUNITY</a>
+                    <ul class="nav_sub">
+                        <li><a href="#">DE NEWS</a></li>
+                        <li><a href="#">DE NOTICE</a></li>
+                        <li><a href="#">우리원이야기</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav_icon">
+                <li><a href="#"><img src="./img/장바구니.png" alt=""></a></li>
+                <li><a href="#">kor</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#" class="border_none"><img src="./img/햄버거바.png" alt=""></a></li>
+            </ul>
+        </nav>
+
+        <nav class="nav_slide">
+
+            <ul class="nav_slide_icon">
+                <li><a href="#"><img src="./img/장바구니.png" alt=""></a></li>
+                <li><a href="#">kor</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+            <ul class="nav_slide_menu">
+                <li>
+                    <a href="#">BRAND </a>
+                    <ul class="nav_slide_sub">
+                        <li><a href="#">브랜드스토리</a></li>
+                        <li><a href="#">교육이념</a></li>
+                        <li><a href="#">CEO 스토리</a></li>
+                        <li><a href="#">연혁</a></li>
+                        <li><a href="#">찾아오시는길</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">PROGRAM</a>
+                    <ul class="nav_slide_sub">
+                        <li><a href="#">The power of drowing</a></li>
+                        <li><a href="#">데생드앙팡 프로그램</a></li>
+                        <li><a href="#"> Art test book</a></li>
+                        <li><a href="#">MBTI별 미술코칭</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">CENTER</a>
+                    <ul class="nav_slide_sub">
+                        <li><a href="#">교육원 찾기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">GALLERY</a>
+                    <ul class="nav_slide_sub">
+                        <li><a href="#">(초)수상작 갤러리</a></li>
+                        <li><a href="#">(유)수상작 갤러리</a></li>
+                        <li><a href="#">세계아동미술대회 소개</a></li>
+                        <li><a href="#">대회결과</a></li>
+                        <li><a href="#">영상 </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">COMMUNITY</a>
+                    <ul class="nav_slide_sub">
+                        <li><a href="#">DE NEWS</a></li>
+                        <li><a href="#">DE NOTICE</a></li>
+                        <li><a href="#">우리원이야기</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        const navMenu = document.querySelectorAll('nav_main');
+        const allNavSub = document.querySelectorAll('nav_sub');
+        const hdader = document.querySelector('header');
+        const headerBaseHeight = 78;
+        console.log(navMenu);
+        console.log(allNavSub);
+        //최대 서브메뉴 높이 계산(서브메뉴가 변경될 경우 높이가 자동으로 계산되어 적용되도록 함)
+        function getMaxnavsubHeight() {
+            let maxHeight = 0;//계산된 서브메뉴의 높이가  maxHeight가 됨
+
+            allNavSub.forEach(sub => {
+                const h = sub.scrollHeight;// scrollHeight 요소의 크기를 콘텐츠만큼 늘릴때 사용
+
+                if(h > maxHeight){
+                    maxaHeight=h;
+                    console.log(maxaHeight);
+                }
+            });
+            return maxHeight;
+        }
+
+        //마우스 올리면 전체 메뉴 슬라이드 다운
+        navMenu.addEventListener('mouseover',()=>{
+            const maxaHeight = getMaxnavsubHeight();
+            //마우스가 오버되면 콘텐츠만큼의 요소크기가 서브메뉴의 최대 높이가 됨.
+            header.style.height = (headerBaseHeight + maxaHeight) + 'px'
+            //헤더의 높이가 헤더의 기본높이+maxHeight만큼 길어짐
+        });
+
+        //마우스 나가면 전체 메뉴 슬라이드 업
+        navMenu.addEventListener('mouseleave',()=>{
+            const maxaHeight = getMaxnavsubHeight();
+            header.style.height = (headerBaseHeight + maxaHeight) + 'px'
+            //헤더의 높이만큼 다시 줄어듬
+        })
+        
+    </script>
+</body>
+
+</html>
