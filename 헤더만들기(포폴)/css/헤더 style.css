@@ -23,17 +23,18 @@ body {
 /*네비게이션 시작*/
 header {
   background-color: #fff;
-   height: 78px;
-   overflow: hidden;
-   transition: all 0.3s ease-in-out;
-   position: relative;
+  height: 78px;
+  /*overflow: hidden;*/
+  transition: all 0.3s ease-in-out;
+  position: relative;
+
 }
 /*반응형분기점 햄버그바*/
-.nav_toggle_btn{
+.nav_toggle_btn {
   /* display: none; */
   position: absolute;
   transform: translateY(-50%);
-  top:50%;
+  top: 50%;
   right: 0;
   padding: 16px 16px;
   display: none;
@@ -44,9 +45,9 @@ header {
   justify-content: center;
 }
 .nav_logo {
-    height: 78px;
-    display: flex;
-    align-items: center;
+  height: 78px;
+  display: flex;
+  align-items: center;
   margin-right: 46px;
 }
 .nav_menu {
@@ -54,29 +55,27 @@ header {
   justify-content: center;
 }
 
-
 .nav_menu > li {
   text-align: center;
-}
-
-
-.nav_menu > li > a {
-  margin: 0 42px;
-  display: block;
-  padding: 29px 0;
-
   position: relative;
 }
 
-.nav_menu > li:hover>a::after{
-    content: "";
-    display: block;
-    height: 1px;
-    width: 100%;
-     background-color:  #f6bd60;
-     position: absolute;
-    left: 0;
-    bottom: 0;
+.nav_menu > li > a {
+  border: 1px solid red;
+  margin: 0 42px;
+  display: block;
+  padding: 29px 0;
+  position: relative;
+}
+.nav_menu > li:hover > a::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: #f6bd60;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 /*메인메뉴 중 클릭된 brand메뉴*/
 .a {
@@ -86,6 +85,10 @@ header {
 .nav_sub {
   text-wrap: nowrap;
   margin-top: 30px;
+}
+
+.nav_sub li {
+  padding: 12px 0;
 }
 .nav_icon {
   height: 22px;
@@ -115,32 +118,102 @@ header {
   width: 0;
   display: none;
 }
+
 /*모바일 햄버그바 메뉴 시작*/
 .nav_slide {
-  display: none;
+  position: absolute;
+  top:0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  
 }
 
-
-@media all and (max-width:768px){
-    .nav_menu {
-        display: none;
-    }
-
-    .nav_icon{
-        display: none;
-    }
-    .nav_toggle_btn{
-      display: block;
-    }
+.nav_slide_icon {
+background-color: #000;
+height: 122px;
+padding: 67px 0 31px 0;
+display: flex;
+justify-content: center;
+align-items: center;
 }
-@media all and (max-width: 480px){
-    .nav_menu{
-      display: none;
+.nav_slide_icon li {
+  position: relative;
+
 }
-    .nav_icon{
-      display: none;
-    }
-    .nav_toggle_btn{
-      display: block;
-    }
+
+.nav_slide_icon li a {
+  color: #fff;
+  height: 24px;
+  display: block;
+  position: relative;
+  padding: 0 21px;
+  justify-content: center;
+  align-items: center;
+  
+}
+.nav_slide_icon li a::after {
+  position: absolute;
+  transform: translateY(-50%);
+  right: 0;
+  top: 50%;
+  content: "";
+  width: 1px;
+  height: 10px;
+  background-color: #fff;
+}
+.nav_slide_icon li:nth-of-type(4){
+  position: absolute;
+  right:16px
+}
+.nav_slide_menu{
+  
+  text-align: center;
+}
+.nav_slide_menu>li{
+  border: 1px solid red;
+  font-size: 25px;
+  padding: 23px 0;
+}
+.nav_slide_menu>li>button{
+  border: 1px solid red;
+  border:0;
+  background-color: transparent;
+  font-size: 25px;
+  cursor: pointer;
+}
+.nav_slide_sub{
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+.nav_slide_sub>li{
+  padding: 12px;
+}
+/*.nav_slide_menu>li:hover .nav_slide_sub{
+  display: inline;
+}*/
+
+@media all and (max-width: 768px) {
+  .nav_menu {
+    display: none;
+  }
+
+  .nav_icon {
+    display: none;
+  }
+  .nav_toggle_btn {
+    display: block;
+  }
+}
+@media all and (max-width: 480px) {
+  .nav_menu {
+    display: none;
+  }
+  .nav_icon {
+    display: none;
+  }
+  .nav_toggle_btn {
+    display: block;
+  }
 }

@@ -72,9 +72,13 @@
 
         //초기상태: 모두 접기 = height값이 0px
 
-        for(let i =0; i<subBtn.length; i++){
-            subBtn[i].style.height = '0px'
-        }
+       // for(let i =0; i<subBtn.length; i++){
+         //   subBtn[i].style.height = '0px'
+        //}
+
+        subBtn.forEach(mainmenu=>{
+            mainmenu.style.height = '0px'
+        })
 
         for(let i =0; i<subBtn.length; i++){
             mainBtn[i].addEventListener('click',()=>{

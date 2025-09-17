@@ -1,0 +1,62 @@
+  // 가져와야지 메인 메뉴>a, 서브메뉴
+        const mainBtn = document.querySelectorAll('.main_menu>a');
+        const subBtn = document.querySelectorAll('.sub_menu');
+        const link = document.querySelectorAll('a');
+        link.forEach(a =>{
+            a.addEventListener('click',(event)=>{
+                event.preventDefault();
+            });
+        })
+
+
+        mainBtn.forEach(mainMenu => {
+            //메인 메뉴를 클릭하면 서브가 열려
+            mainMenu.addEventListener('click', () => {
+            
+                //서브가 최대 높이값으로
+                subBtn.forEach(subMenu => {
+                    //subMenu.style.height = "200px"
+                    const maxSubHeight = subMenu.scrollHeight;
+                    console.log(maxSubHeight);
+                    subMenu.style.height = "0px";
+                })
+
+            });
+        });
+
+
+
+----------------------------------
+
+
+//슬라이드메뉴의 메인메뉴>a(.nav_slide_menu>li>a)와 서브메뉴(.nav_slide_sub) 가져오기
+        const mainBtn = document.querySelectorAll('.nav_slide_menu>li>a');
+        const subBtn = document.querySelectorAll('.nav_slide_sub');
+        //클릭시 새로고침 안되도록 막음
+        const link = document.querySelectorAll('a');
+        link.forEach(a =>{
+            //a를 클릭하면 event가 생기는데 prevenDefault 로 막는다.
+            a.addEventListener('click',(event)=>{
+                event.preventDefault();
+            });
+       })
+
+        //메인 메뉴를 클릭하면 서브메뉴가 열림
+        //mainBtn을 forEach로 각각(복수) 가져오고 가져온 복수를 mainMenu로 정리(단수)해준다.
+        mainBtn.forEach(mainMenu => {
+            mainMenu.addEventListener('click', () =>{
+                //클릭해서 서브메뉴가 드롭다운되려면 서브메뉴의 최대 높이값을 구해야함.
+
+                subBtn.forEach(subMenu => {
+                    //서브메뉴의 최대높이를 maxSubHeight로
+                    const maxSubHeight = subMenu.scrollHeight;
+                    //콘솔창에 서브메뉴의 최대높이 표시되게끔함.
+                    console.log(maxSubHeight);
+                    //서브메뉴가 맨 처음에는 닫혀있음.
+                    subMenu.style.height = "0px"
+                })
+                
+
+            })
+
+        })

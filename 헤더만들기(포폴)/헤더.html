@@ -33,7 +33,8 @@
                         <li><a href="#">찾아오시는길</a></li>
                     </ul>
                 </li>
-                <li><a href="#">PROGRAM</a>
+                <li>
+                    <a href="#">PROGRAM</a>
                     <ul class="nav_sub">
                         <li><a href="#">The power of drowing</a></li>
                         <li><a href="#">데생드앙팡 프로그램</a></li>
@@ -41,12 +42,14 @@
                         <li><a href="#">MBTI별 미술코칭</a></li>
                     </ul>
                 </li>
-                <li><a href="#">CENTER</a>
+                <li>
+                    <a href="#">CENTER</a>
                     <ul class="nav_sub">
                         <li><a href="#">교육원 찾기</a></li>
                     </ul>
                 </li>
-                <li><a href="#">GALLERY</a>
+                <li>
+                    <a href="#">GALLERY</a>
                     <ul class="nav_sub">
                         <li><a href="#">(초)수상작 갤러리</a></li>
                         <li><a href="#">(유)수상작 갤러리</a></li>
@@ -55,7 +58,8 @@
                         <li><a href="#">영상 </a></li>
                     </ul>
                 </li>
-                <li><a href="#">COMMUNITY</a>
+                <li>
+                    <a href="#">COMMUNITY</a>
                     <ul class="nav_sub">
                         <li><a href="#">DE NEWS</a></li>
                         <li><a href="#">DE NOTICE</a></li>
@@ -72,15 +76,15 @@
         </nav>
 
         <nav class="nav_slide">
-
             <ul class="nav_slide_icon">
-                <li><a href="#"><img src="./img/장바구니.png" alt=""></a></li>
+                <li><a href="#"><img src="./img/장바구니(white).png" alt=""></a></li>
                 <li><a href="#">kor</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="#" class="border_none">Login</a></li>
+                <li><a href="#" class="border_none"><img src="./img/닫기.png" alt=""></a></li>
             </ul>
             <ul class="nav_slide_menu">
                 <li>
-                    <a href="#">BRAND </a>
+                    <button>BRAND </button>
                     <ul class="nav_slide_sub">
                         <li><a href="#">브랜드스토리</a></li>
                         <li><a href="#">교육이념</a></li>
@@ -90,7 +94,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">PROGRAM</a>
+                    <button>PROGRAM</button>
                     <ul class="nav_slide_sub">
                         <li><a href="#">The power of drowing</a></li>
                         <li><a href="#">데생드앙팡 프로그램</a></li>
@@ -99,13 +103,13 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">CENTER</a>
+                    <button>CENTER</button>
                     <ul class="nav_slide_sub">
                         <li><a href="#">교육원 찾기</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">GALLERY</a>
+                    <button>GALLERY</button>
                     <ul class="nav_slide_sub">
                         <li><a href="#">(초)수상작 갤러리</a></li>
                         <li><a href="#">(유)수상작 갤러리</a></li>
@@ -115,7 +119,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">COMMUNITY</a>
+                    <button>COMMUNITY</button>
                     <ul class="nav_slide_sub">
                         <li><a href="#">DE NEWS</a></li>
                         <li><a href="#">DE NOTICE</a></li>
@@ -127,42 +131,74 @@
     </header>
 
     <script>
-        const navMenu = document.querySelectorAll('nav_main');
-        const allNavSub = document.querySelectorAll('nav_sub');
-        const hdader = document.querySelector('header');
+        const navMenu = document.querySelector('.nav_menu');
+        const allNavSub = document.querySelectorAll('.nav_sub');
+        const header = document.querySelector('header');
         const headerBaseHeight = 78;
-        console.log(navMenu);
-        console.log(allNavSub);
-        //최대 서브메뉴 높이 계산(서브메뉴가 변경될 경우 높이가 자동으로 계산되어 적용되도록 함)
-        function getMaxnavsubHeight() {
-            let maxHeight = 0;//계산된 서브메뉴의 높이가  maxHeight가 됨
+
+        //최대 서브메뉴 높이 계산하는법(서브메뉴의 최대높이가 최대의 높이값이 된다. 변경시에도 적용됨)
+        function getMaxsubmenuaHeight() {
+            let maxHeight = 0;
 
             allNavSub.forEach(sub => {
-                const h = sub.scrollHeight;// scrollHeight 요소의 크기를 콘텐츠만큼 늘릴때 사용
+                const h = sub.scrollHeight;//요소가 차지하는만큼 늘려준다.
 
-                if(h > maxHeight){
-                    maxaHeight=h;
-                    console.log(maxaHeight);
+                if (h >maxHeight) {
+                    maxHeight = h;
+                    console.log(maxHeight);
                 }
-            });
+            })
             return maxHeight;
         }
-
-        //마우스 올리면 전체 메뉴 슬라이드 다운
-        navMenu.addEventListener('mouseover',()=>{
-            const maxaHeight = getMaxnavsubHeight();
-            //마우스가 오버되면 콘텐츠만큼의 요소크기가 서브메뉴의 최대 높이가 됨.
-            header.style.height = (headerBaseHeight + maxaHeight) + 'px'
-            //헤더의 높이가 헤더의 기본높이+maxHeight만큼 길어짐
+        //마우스오버하면 서브메뉴 슬라이드 다운
+        navMenu.addEventListener('mouseover', ()=>{
+            const maxHeight = getMaxsubmenuaHeight();
+            header.style.height = (headerBaseHeight + maxHeight + 30)+'px';
+            //헤더의 높이가 헤더의 기본높이에 서브메뉴의 높이만큼 px로 늘어난다.
         });
 
-        //마우스 나가면 전체 메뉴 슬라이드 업
-        navMenu.addEventListener('mouseleave',()=>{
-            const maxaHeight = getMaxnavsubHeight();
-            header.style.height = (headerBaseHeight + maxaHeight) + 'px'
-            //헤더의 높이만큼 다시 줄어듬
-        })
+        //마우스리브하면 서브메뉴 슬라이드 업
+        navMenu.addEventListener('mouseleave', ()=>{
+            const maxHeight = getMaxsubmenuaHeight();
+            header.style.height = (headerBaseHeight)+'px';
+            //헤더의 높이가 헤더의 기본높이로 돌아간다.
+        });
+
+        //슬라이드메뉴의 메인메뉴(.nav_slide_menu>li>botton)와 서브메뉴(.nav_slide_sub)가져오기
+        const mainBtns = document.querySelectorAll('.nav_slide_menu>li>button');
+        const subMenus = document.querySelectorAll('.nav_slide_sub');
+
+        //초기의 서브메뉴는 닫혀있는 상태
+        //subMenus들을 각각(복수의 요소) 가져오고 복수요소를 sub로 명명.
+        //sub(subMenus의 복수요소를 단수로 설정한 명칭)의 높이는 0이다(보이지 않게 처리)
+        subMenus.forEach(sub =>{
+            sub.style.height = "0px"
+        });
+        //mainBtn들을 각각(복수의 요소) 가져오고 복수요소를 btn으로 명명.
+        mainBtns.forEach(btn =>{
+            btn.addEventListener('click',(e) =>{
+                e.preventDefault();//새로고침 방지
         
+            //currentSub(현재 클릭한 서브메뉴)는 btn(mainBtn 복수요소를 명명한 명칭)의 가장하위요소의 형재자매를 불러옴.
+                const currentSub = btn.nextElementSibling;
+                console.log(currentSub);
+                
+            //모든 서브메뉴를 닫음
+                subMenus.forEach(sub => {
+                    sub.style.height = "0px";
+
+                //currentSub(현재 클릭한 메뉴)의 요소의 높이가 0이상(열려있을 경우)일 경우 서브메뉴를 닫는다.
+                    if( currentSub.clientHeight > 0){
+                        sub.style.height = "0px";
+                    }else{
+                    //닫혀있으면 열기
+                    console.log("sss")
+                        currentSub.style.height = sub.scrollHeight + "px"
+                }
+            });
+        });
+    });
+    
     </script>
 </body>
 
