@@ -14,7 +14,7 @@
 <body>
     <header>
         <div class="nav_toggle_btn">
-            <a href="#"><img src="./img/햄버거바.png" alt=""></a>
+            <a href="#" class=""><img src="./img/햄버거바.png" alt=""></a>
         </div>
         <nav class="nav_main">
             <div class="nav_logo">
@@ -71,7 +71,7 @@
                 <li><a href="#"><img src="./img/장바구니.png" alt=""></a></li>
                 <li><a href="#">kor</a></li>
                 <li><a href="#">Login</a></li>
-                <li><a href="#" class="border_none"><img src="./img/햄버거바.png" alt=""></a></li>
+                <li><a href="#" class="border_noneh"><img src="./img/햄버거바.png" alt=""></a></li>
             </ul>
         </nav>
 
@@ -80,11 +80,11 @@
                 <li><a href="#"><img src="./img/장바구니(white).png" alt=""></a></li>
                 <li><a href="#">kor</a></li>
                 <li><a href="#" class="border_none">Login</a></li>
-                <li><a href="#" class="border_none"><img src="./img/닫기.png" alt=""></a></li>
+                <li><a href="#" class="border_nonec active"><img src="./img/닫기.png" alt=""></a></li>
             </ul>
             <ul class="nav_slide_menu">
                 <li>
-                    <button>BRAND </button>
+                    <button>BRAND</button>
                     <ul class="nav_slide_sub">
                         <li><a href="#">브랜드스토리</a></li>
                         <li><a href="#">교육이념</a></li>
@@ -101,12 +101,14 @@
                         <li><a href="#"> Art test book</a></li>
                         <li><a href="#">MBTI별 미술코칭</a></li>
                     </ul>
+                  
                 </li>
                 <li>
                     <button>CENTER</button>
                     <ul class="nav_slide_sub">
                         <li><a href="#">교육원 찾기</a></li>
                     </ul>
+                   
                 </li>
                 <li>
                     <button>GALLERY</button>
@@ -117,14 +119,17 @@
                         <li><a href="#">대회결과</a></li>
                         <li><a href="#">영상 </a></li>
                     </ul>
+                  
                 </li>
                 <li>
-                    <button>COMMUNITY</button>
+                    
+                    <button>COMMUNITY</button>  
                     <ul class="nav_slide_sub">
                         <li><a href="#">DE NEWS</a></li>
                         <li><a href="#">DE NOTICE</a></li>
                         <li><a href="#">우리원이야기</a></li>
                     </ul>
+                  
                 </li>
             </ul>
         </nav>
@@ -199,6 +204,48 @@
         });
     });
     
+    //border_noneh(햄버그바)와  nav_slide(슬라이드메뉴)가져오기
+    const toggleBtn = document.querySelector('.border_noneh');
+    console.log('.border_noneh');
+    const slideMenu = document.querySelector('.nav_slide');
+
+    //햄버그바를 클릭하면 active가 붙고, active가 붙으면 숨겨져있던 슬라이드 메뉴 가져오기
+    toggleBtn.addEventListener('click',()=>{
+        slideMenu.classList.add('active');
+    });
+
+    const toggleBtnc = document.querySelector('.border_nonec');
+
+    //toggleBtnc(닫기버튼)을 클릭하면 slideMenuc가 사라진다
+    toggleBtnc.addEventListener('click',()=>{
+        slideMenu.classList.remove('active');
+    })
+
+    //버튼을 클릭하면 active가 생기고 다른메뉴의 active는 사라짐
+    //DOMContentLoaded->모든 요소를 완전히 완성되었을때 이벤트가 실행됨.
+    document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.nav_slide_menu>li');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                buttons.forEach(btn => btn.classList.remove('active'));
+
+                this.classList.add('active');//이번에 클릭한 리스트에 active부여
+            })
+        })
+    })
+    
+    //반응형 분기점에서의 햄버그바동작
+
+    //반응형 햄버그바 가져오기
+    const hBar = document.querySelector('.nav_toggle_btn');
+
+    ////반응형 햄버그바를 클릭하면 active가 붙고, active가 붙으면 숨겨져있던 슬라이드 메뉴 가져오기
+    hBar.addEventListener('click',()=>{
+        slideMenu.classList.add('active');
+    })
+    
+        
     </script>
 </body>
 

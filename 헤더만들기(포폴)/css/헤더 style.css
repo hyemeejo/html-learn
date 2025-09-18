@@ -24,10 +24,9 @@ body {
 header {
   background-color: #fff;
   height: 78px;
-  /*overflow: hidden;*/
-  transition: all 0.3s ease-in-out;
   position: relative;
-
+  border: 1px solid red;
+  overflow: hidden;
 }
 /*반응형분기점 햄버그바*/
 .nav_toggle_btn {
@@ -113,23 +112,32 @@ header {
   height: 10px;
   background-color: black;
 }
-
+.border_noneh::after {
+  width: 0;
+  display: none;
+}
 .border_none::after {
   width: 0;
   display: none;
 }
-
+.border_nonec::after {
+  width: 0;
+  display: none;
+}
 /*모바일 햄버그바 메뉴 시작*/
 .nav_slide {
-  position: absolute;
+  border: 1px solid red;
+  position: fixed;
   top:0;
-  right: 0;
+  right: -100%;
   width: 100%;
   height: 100vh;
   background-color: #fff;
-  
+  transition:all 0.3s ease-in-out;
 }
-
+.nav_slide.active{
+  right: 0;
+}
 .nav_slide_icon {
 background-color: #000;
 height: 122px;
@@ -140,7 +148,7 @@ align-items: center;
 }
 .nav_slide_icon li {
   position: relative;
-
+ 
 }
 
 .nav_slide_icon li a {
@@ -167,28 +175,57 @@ align-items: center;
   position: absolute;
   right:16px
 }
+
 .nav_slide_menu{
-  
   text-align: center;
 }
 .nav_slide_menu>li{
-  border: 1px solid red;
   font-size: 25px;
-  padding: 23px 0;
+  /*margin: 23px 0;*/
 }
-.nav_slide_menu>li>button{
-  border: 1px solid red;
+.arrow{
+  opacity: 1;
+  transition: all 0.3s ease;
+  display: inline-block;
+
+}
+.nav_slide_menu li button{
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
   border:0;
   background-color: transparent;
   font-size: 25px;
+  transition: all 0.3s;
   cursor: pointer;
+
 }
+
+.nav_slide_menu>li.active button::after{
+  content: "";
+  width: 16px;
+  height: 10px;
+  display: inline-block;
+ background: url(../img/아래.png) no-repeat center right;
+ padding-left: 9px;
+ padding-bottom:5px;
+}
+
+.nav_slide_menu>li.active button{
+background-color: #f6bd60;
+}
+.nav_slide_menu>li.active .nav_slide_sub{
+  background-color: #fff;
+}
+/* button:active .arrow{
+  opacity: 1;
+} */
 .nav_slide_sub{
   overflow: hidden;
-  transition: height 0.3s ease;
+  transition: height 0.2s ease;
 }
-.nav_slide_sub>li{
-  padding: 12px;
+.nav_slide_sub li{
+  padding: 30px;
 }
 /*.nav_slide_menu>li:hover .nav_slide_sub{
   display: inline;
@@ -203,6 +240,9 @@ align-items: center;
     display: none;
   }
   .nav_toggle_btn {
+    display: block;
+  }
+  .nav_slide_menu {
     display: block;
   }
 }
